@@ -1,9 +1,9 @@
 AWS Utilities Image
 ===
 This image provides the following tools for managing AWS infrastructure:
-- AWS CLI v2 to communicate directly with AWS APIs
-- Terraform to manage AWS infrastructure as code, note this is installed via TFENV
-- aws-profile for managing and assuming AWS roles
+- [AWS CLI v2](https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-welcome.html) to communicate directly with AWS APIs
+- [Terraform](https://www.terraform.io) to manage AWS infrastructure as code, note this is installed via [tfenv](https://github.com/tfutils/tfenv).
+- [aws-profile](https://pypi.org/project/aws-profile/) for managing and assuming AWS roles
 - [aws-vault](https://github.com/99designs/aws-vault) for managing and assuming AWS roles
 
 # Usage
@@ -14,7 +14,7 @@ docker run -i -t voquis/utils-aws bash
 ```
 
 ## Complete example
-To run with an existing Terraform project and AWS profiles set up on disk and ssh configuration available to the container:
+To run with an existing Terraform project and AWS profiles set up on disk (in `~/.aws`) and ssh configuration (in `~/.ssh`) available to the container:
 ```shell
 docker run -it \
 --name my-tf-project \
