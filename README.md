@@ -3,6 +3,7 @@ AWS Utilities Image
 This image provides the following tools for managing AWS infrastructure:
 - [AWS CLI v2](https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-welcome.html) to communicate directly with AWS APIs
 - [Terraform](https://www.terraform.io) to manage AWS infrastructure as code, note this is installed via [tfenv](https://github.com/tfutils/tfenv).
+- [Packer](https://www.packer.io) to build images including AWS AMIs, note this is installed via [pkenv](https://github.com/iamhsa/pkenv).
 - [aws-profile](https://pypi.org/project/aws-profile/) for managing and assuming AWS roles
 - [aws-vault](https://github.com/99designs/aws-vault) for managing and assuming AWS roles
 

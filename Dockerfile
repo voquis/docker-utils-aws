@@ -2,8 +2,6 @@ FROM python:3.9-slim
 
 # https://github.com/aws/aws-cli/blob/v2/CHANGELOG.rst
 ARG AWS_CLI_VERSION=2.1.27
-# https://releases.hashicorp.com/packer/
-ARG PACKER_VERSION=1.7.0
 # https://github.com/99designs/aws-vault/tags
 ARG AWS_VAULT_VERSION=v6.2.0
 
@@ -34,9 +32,7 @@ RUN /usr/share/tfenv/bin/tfenv install
 RUN /usr/share/tfenv/bin/tfenv use
 RUN echo 'export PATH="/usr/share/tfenv/bin:$PATH"' >> /root/.bashrc
 
-# Install Packer
-RUN curl -L -o packer.zip https://releases.hashicorp.com/packer/${PACKER_VERSION}/packer_${PACKER_VERSION}_linux_amd64.zip
-RUN unzip packer.zip
-RUN mv packer /usr/local/bin
-RUN chmod +x /usr/local/bin/packer
-RUN rm packer.zip
+# Install Packer with version manager (pkenv)
+RUN git clone https://github.com/iamhsa/pkenv.git /usr/share/pkenv
+RUN /usr/share/pkenv/bin/pkenv install $(/usr/share/pkenv/bin/pkenv list-remote | head -n 1)
+RUN echo 'export PATH="/usr/share/pkenv/bin:$PATH"' >> /root/.bashrc
