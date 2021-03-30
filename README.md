@@ -4,6 +4,7 @@ This image provides the following tools for managing AWS infrastructure:
 - [AWS CLI v2](https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-welcome.html) to communicate directly with AWS APIs
 - [Terraform](https://www.terraform.io) to manage AWS infrastructure as code, note this is installed via [tfenv](https://github.com/tfutils/tfenv).
 - [Packer](https://www.packer.io) to build images including AWS AMIs, note this is installed via [pkenv](https://github.com/iamhsa/pkenv).
+- [Ruby](https://www.ruby-lang.org) programming language, installed via [rbenv](https://github.com/rbenv/rbenv)
 - [aws-profile](https://pypi.org/project/aws-profile/) for managing and assuming AWS roles
 - [aws-vault](https://github.com/99designs/aws-vault) for managing and assuming AWS roles
 
@@ -38,6 +39,21 @@ tfenv install <version number>
 ```
 
 To lock a project to a specific version of terraform, add a `.terraform-version` file to the root of the Terraform project with a single line for the desired version number.
+
+## Packer
+To list available versions of Packer:
+```shell
+pkenv list-remote
+```
+
+To lock a project to a specific version of packer, add a `.packer-version` file to the root of the Packer project with a single line for the desired version number.
+## Ruby
+To list available versions of Ruby:
+```shell
+rbenv install --list
+```
+
+To lock a project to a specific version of ruby, add a `.ruby-version` file to the root of the Ruby project with a single line for the desired version number.
 
 # Building and running locally
 First clone this repository with:
