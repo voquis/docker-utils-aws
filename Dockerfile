@@ -39,6 +39,7 @@ RUN echo 'export PATH="/usr/share/pkenv/bin:$PATH"' >> /root/.bashrc
 
 RUN apt-get install -y \
     bzip2 \
+    g++ \
     gcc \
     make \
     libssl-dev \
