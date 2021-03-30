@@ -10,7 +10,6 @@ RUN apt-get update
 RUN apt-get install -y \
             curl \
             git \
-            rbenv \
             unzip \
             vim
 
@@ -37,3 +36,17 @@ RUN echo 'export PATH="/usr/share/tfenv/bin:$PATH"' >> /root/.bashrc
 RUN git clone https://github.com/iamhsa/pkenv.git /usr/share/pkenv
 RUN /usr/share/pkenv/bin/pkenv install $(/usr/share/pkenv/bin/pkenv list-remote | head -n 1)
 RUN echo 'export PATH="/usr/share/pkenv/bin:$PATH"' >> /root/.bashrc
+
+RUN apt-get install -y \
+    bzip2 \
+    gcc \
+    make \
+    libssl-dev \
+    zlib1g-dev
+
+# Install Ruby version manager (rbenv) with ruby builder
+RUN git clone https://github.com/rbenv/ruby-build.git /usr/share/ruby-build
+RUN /usr/share/ruby-build/install.sh
+
+RUN git clone https://github.com/rbenv/rbenv.git /usr/share/rbenv
+RUN echo 'export PATH="/usr/share/rbenv/bin:$PATH"' >> /root/.bashrc
