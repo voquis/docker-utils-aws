@@ -8,8 +8,9 @@ ARG AWS_VAULT_VERSION=v6.2.0
 # Install dependencies
 RUN apt-get update
 RUN apt-get install -y \
-            git \
             curl \
+            git \
+            rbenv \
             unzip \
             vim
 
